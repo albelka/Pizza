@@ -16,8 +16,8 @@ Pizza.prototype.findPriceBySize = function() {
     this.price += 8;
   } else {
     alert("You must choose a size!");
+    Event.stop(event);
   } return this.price;
-  console.log("price" + this.price);
 };
 
 Pizza.prototype.findPriceByTopping = function(newPrice) {
@@ -38,7 +38,6 @@ Pizza.prototype.findPriceByTopping = function(newPrice) {
 
 Pizza.prototype.youOrdered = function(toppingsAsString) {
   return "A " + this.pizzaSize + " pizza with " + toppingsAsString + ".<br> Your price will be $" + this.price + " at the door. Don't forget to tip your driver!"
-  console.log(addSpace(this.toppings));
 }
 
 var showImage = function(toppings){
