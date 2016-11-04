@@ -55,28 +55,14 @@ function resetFields() {
   $("#pizzaSize").val("");
   $("input:checkbox[name=toppings]:checked").each(function(){
     toppings.push($(this).val(""));
+    console.log(size);
   });
 };
 
+
+
 //front end
 $(function() {
-  $("#another").click(function(){
-    $("div#firstPizza").append('<div class="nextPizza">' +
-                            '<div class="form-group removeForm" id="firstPizza">' +
-                              '<label for="size">Choose your size:</label>' +
-                              '<select class="form-control" id="pizzaSize" placeholder="size">' +
-                                '<option value="" selected disabled>Please select</option>' +
-                                '<option>Personal 8 inch</option>' +
-                                '<option>Small 12 inch </option>' +
-                                '<option>Medium 16 inch</option>' +
-                                '<option>Large 20 inch</option>' +
-                              '</select>' +
-                            '</div>' +
-                          '</div>');
-
-});
-
-
   $(".pizzaForm").submit(function(event) {
     event.preventDefault();
     var size = $("#pizzaSize").val();
@@ -91,10 +77,19 @@ $(function() {
     var toppingsAsString = newPizza.toppings.join(', ');
     newPizza.price = finalPrice;
     $(".pizzaOrdered").fadeIn(600);
+    $("#another").fadeIn(600);
     showImage(newPizza.toppings);
-    // var commas = addSpace(newPizza.toppings);
     $("ul#result").append("<li>" + newPizza.youOrdered(toppingsAsString) + "</li>");
-  });
 
-  resetFields();
+      $("#another").click(function(){
+        function resetFields() {
+          $("#pizzaSize").val([]);
+          $("input:checkbox[name=toppings]:checked").each(function(){toppings.push($(this).val([]));
+          });
+        };
+    resetFields();
+    // $(".results").empty();
+    // $(".results").show();
+    });
+  });
 });

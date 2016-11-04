@@ -1,6 +1,9 @@
 .pizzaOrdered {
   display: none;
 }
+#another {
+  display: none;
+}
 
 #anchovies {
   display: none;
