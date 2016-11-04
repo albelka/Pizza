@@ -15,7 +15,7 @@ Pizza.prototype.findPriceBySize = function() {
   }else if (this.pizzaSize === "Large 20 inch") {
     this.price += 8;
   } else {
-    alert("You must choose a size!")
+    alert("You must choose a size!");
   } return this.price;
   console.log("price" + this.price);
 };
@@ -34,8 +34,11 @@ Pizza.prototype.findPriceByTopping = function(newPrice) {
   } return newPrice;
 }
 
-Pizza.prototype.youOrdered = function() {
-  return "A " + this.pizzaSize + " pizza with " + this.toppings + ".<br> Your price will be $" + this.price + " at the door. Don't forget to tip your driver!"
+
+
+Pizza.prototype.youOrdered = function(toppingsAsString) {
+  return "A " + this.pizzaSize + " pizza with " + toppingsAsString + ".<br> Your price will be $" + this.price + " at the door. Don't forget to tip your driver!"
+  console.log(addSpace(this.toppings));
 }
 
 var showImage = function(toppings){
@@ -63,11 +66,13 @@ $(function() {
     var newPrice = newPizza.findPriceBySize();
     finalPrice = newPizza.findPriceByTopping(newPrice);
     newPizza = new Pizza (size, toppings);
+    var toppingsAsString = newPizza.toppings.join(', ');
+    alert(toppingsAsString);
+
     newPizza.price = finalPrice;
-    console.log(newPizza.price);
     $(".pizzaOrdered").show();
-    console.log(newPizza.toppings);
     showImage(newPizza.toppings);
-    $("ul#result").append("<li>" + newPizza.youOrdered() + "</li>");
+    // var commas = addSpace(newPizza.toppings);
+    $("ul#result").append("<li>" + newPizza.youOrdered(toppingsAsString) + "</li>");
   });
 });

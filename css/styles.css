@@ -4,16 +4,46 @@
 
 #anchovies {
   display: none;
+  border-radius: 10px;
+  width: 100px;
 }
 #olives {
   display: none;
+  border-radius: 10px;
+  width: 100px;
 }
 #cheese {
   display: none;
+  border-radius: 10px;
+  width: 100px;
 }
 #pepperoni {
   display: none;
+  border-radius: 10px;
+  width: 100px;
 }
 #salami {
   display: none;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.images {
+  display: inline-block;
+
+}
+ .pizzaForm {
+   font-size: 18px;
+   background-color: black;
+   color: white;
+   padding: 10%;
+   border-radius: 5px;
+   width: 60%;
+
+ }
+
+body {
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
