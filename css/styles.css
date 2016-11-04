@@ -33,17 +33,27 @@
 
 }
  .pizzaForm {
-   font-size: 18px;
+   font-size: 22px;
    background-color: black;
+   font-family: fantasy;
    color: white;
    padding: 10%;
-   border-radius: 5px;
+   border-radius: 15px;
    width: 60%;
+ }
 
+ h1 {
+   font-family: fantasy;
+   font-size: 50px;
  }
 
 body {
   background-image: url(../img/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+#result {
+  font-family: fantasy;
+  padding-top: 30px;
+  font-size: 20px;
 }

@@ -12,7 +12,7 @@
       <h1> New World Pizza</h1>
       <!-- <img src="img/fry.jpg" alt="a picture of Frye"> -->
       <form class="pizzaForm">
-        <div class="form-group">
+        <div class="form-group" id="firstPizza">
           <label for="size">Choose your size:</label>
           <select class="form-control" id="pizzaSize" placeholder="size">
             <option value="" selected disabled>Please select</option>
@@ -23,7 +23,7 @@
           </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group checks">
           <p>Choose your toppings:</p>
           <input type="checkbox" name="toppings" value="olives"> Olives<br>
           <input type="checkbox" name="toppings" value="pepperoni">Peperoni<br>
@@ -43,6 +43,9 @@
         <img id="olives" src="img/olives.jpeg" alt="a picture of olives.">
         <img id="pepperoni" src="img/pepperoni.jpeg" alt="a picture of pepperoni.">
         <img id="salami" src="img/salami.jpeg" alt="a picture of salami.">
+      </div>
+      <button id="another" class="btn btn-warning">Order another Pizza</button>
+
       </div>
     </div>
 

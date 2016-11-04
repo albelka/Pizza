@@ -37,7 +37,7 @@ Pizza.prototype.findPriceByTopping = function(newPrice) {
 
 
 Pizza.prototype.youOrdered = function(toppingsAsString) {
-  return "A " + this.pizzaSize + " pizza with " + toppingsAsString + ".<br> Your price will be $" + this.price + " at the door. Don't forget to tip your driver!"
+  return "A " + this.pizzaSize + " pizza with " + toppingsAsString + ".<br> Your price will be $" + this.price + " for pick-up."
 }
 
 var showImage = function(toppings){
@@ -51,9 +51,32 @@ var showImage = function(toppings){
   });
 }
 
+function resetFields() {
+  $("#pizzaSize").val("");
+  $("input:checkbox[name=toppings]:checked").each(function(){
+    toppings.push($(this).val(""));
+  });
+};
 
 //front end
 $(function() {
+  $("#another").click(function(){
+    $("div#firstPizza").append('<div class="nextPizza">' +
+                            '<div class="form-group removeForm" id="firstPizza">' +
+                              '<label for="size">Choose your size:</label>' +
+                              '<select class="form-control" id="pizzaSize" placeholder="size">' +
+                                '<option value="" selected disabled>Please select</option>' +
+                                '<option>Personal 8 inch</option>' +
+                                '<option>Small 12 inch </option>' +
+                                '<option>Medium 16 inch</option>' +
+                                '<option>Large 20 inch</option>' +
+                              '</select>' +
+                            '</div>' +
+                          '</div>');
+
+});
+
+
   $(".pizzaForm").submit(function(event) {
     event.preventDefault();
     var size = $("#pizzaSize").val();
@@ -66,12 +89,12 @@ $(function() {
     finalPrice = newPizza.findPriceByTopping(newPrice);
     newPizza = new Pizza (size, toppings);
     var toppingsAsString = newPizza.toppings.join(', ');
-    alert(toppingsAsString);
-
     newPizza.price = finalPrice;
-    $(".pizzaOrdered").show();
+    $(".pizzaOrdered").fadeIn(600);
     showImage(newPizza.toppings);
     // var commas = addSpace(newPizza.toppings);
     $("ul#result").append("<li>" + newPizza.youOrdered(toppingsAsString) + "</li>");
   });
+
+  resetFields();
 });
