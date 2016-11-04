@@ -10,6 +10,7 @@
   <body>
     <div class="container">
       <h1>Pizza World</h1>
+      <img src="img/fry.jpg" alt="a picture of Frye">
       <form class="pizzaForm">
         <div class="form-group">
           <label for="size">Choose your size:</label>
@@ -25,10 +26,10 @@
         <div class="form-group">
           <p>Choose your toppings:</p>
           <input type="checkbox" name="toppings" value="olives"> Olives<br>
-          <input type="checkbox" name="toppings" value="peperoni">Peperoni.<br>
+          <input type="checkbox" name="toppings" value="pepperoni">Peperoni.<br>
           <input type="checkbox" name="toppings" value="salami">Salami<br>
           <input type="checkbox" name="toppings" value="anchovies">Anchovies<br>
-          <input type="checkbox" name="toppings" value="cheese">extra cheese<br>
+          <input type="checkbox" name="toppings" value="cheese">Extra Cheese<br>
         </div>
 
         <button type="submit" class="btn btn-warning">Enter</button>
@@ -36,6 +37,13 @@
 
       <h2 class="pizzaOrdered">You ordered:</h2>
       <ul id="result"></ul>
+      <div class="images">
+        <img id="anchovies" src="img/anchovies.jpeg" alt="a picture of anchovies.">
+        <img id="cheese" src="img/cheese.jpeg" alt="a picture of cheese.">
+        <img id="olives" src="img/olives.jpeg" alt="a picture of olives.">
+        <img id="pepperoni" src="img/pepperoni.jpeg" alt="a picture of pepperoni.">
+        <img id="salami" src="img/salami.jpeg" alt="a picture of salami.">
+      </div>
     </div>
 
   </body>

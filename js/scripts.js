@@ -1,5 +1,5 @@
 //business logic
-function Pizza(size, toppings, price) {
+function Pizza(size, toppings) {
   this.pizzaSize =size;
   this.toppings = toppings;
   this.price = 10;
@@ -17,6 +17,7 @@ Pizza.prototype.findPriceBySize = function() {
   } else {
     alert("You must choose a size!")
   } return this.price;
+  console.log("price" + this.price);
 };
 
 Pizza.prototype.findPriceByTopping = function(newPrice) {
@@ -30,14 +31,23 @@ Pizza.prototype.findPriceByTopping = function(newPrice) {
       newPrice += 4;
   }else if (this.toppings.length === 1) {
       newPrice += 2;
-  } this.price = newPrice;
-    return this.price;
+  } return newPrice;
 }
 
 Pizza.prototype.youOrdered = function() {
   return "A " + this.pizzaSize + " pizza with " + this.toppings + ".<br> Your price will be $" + this.price + " at the door. Don't forget to tip your driver!"
 }
 
+var showImage = function(toppings){
+    toppings.forEach(function(topping){
+    if(topping === "Olives"){
+    } else if(topping === "Extra Cheese"){
+    } else if(topping === "Anchovies"){
+    } else if(topping === "Pepperoni"){
+    } else if(topping === "Salami"){
+    } return $("#" + topping).show();
+  });
+}
 
 
 //front end
@@ -52,10 +62,12 @@ $(function() {
     });
     var newPrice = newPizza.findPriceBySize();
     finalPrice = newPizza.findPriceByTopping(newPrice);
-    newPizza = new Pizza (size, toppings, finalPrice);
-    console.log(finalPrice);
+    newPizza = new Pizza (size, toppings);
+    newPizza.price = finalPrice;
     console.log(newPizza.price);
     $(".pizzaOrdered").show();
+    console.log(newPizza.toppings);
+    showImage(newPizza.toppings);
     $("ul#result").append("<li>" + newPizza.youOrdered() + "</li>");
   });
 });
