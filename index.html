@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizza Shop</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pizza World</h1>
+      <form class="pizzaForm">
+        <div class="form-group">
+          <label for="size">Choose your size:</label>
+          <select class="form-control" id="pizzaSize" placeholder="size">
+            <option value="" selected disabled>Please select</option>
+            <option>Personal Pizza, 8 inch</option>
+            <option>Small 12 inch </option>
+            <option>Medium 16 inch</option>
+            <option>Large 20 inch</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p>Choose your toppings:</p>
+          <input type="checkbox" name="toppings" value="olives"> Olives<br>
+          <input type="checkbox" name="toppings" value="peperoni">Peperoni.<br>
+          <input type="checkbox" name="toppings" value="salami">Salami<br>
+          <input type="checkbox" name="toppings" value="anchovies">Anchovies<br>
+          <input type="checkbox" name="toppings" value="cheese">extra cheese<br>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Enter</button>
+      </form>
+
+      <h2 class="pizzaOrdered">You ordered:</h2>
+      <ul id="result"></ul>
+    </div>
+
+  </body>
+</html>
